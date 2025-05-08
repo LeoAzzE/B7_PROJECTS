@@ -1280,7 +1280,7 @@ export namespace Prisma {
   export type ProductMinAggregateOutputType = {
     id: number | null
     name: string | null
-    imagem: string | null
+    image: string | null
     price: Decimal | null
     ingredients: string | null
   }
@@ -1288,7 +1288,7 @@ export namespace Prisma {
   export type ProductMaxAggregateOutputType = {
     id: number | null
     name: string | null
-    imagem: string | null
+    image: string | null
     price: Decimal | null
     ingredients: string | null
   }
@@ -1296,7 +1296,7 @@ export namespace Prisma {
   export type ProductCountAggregateOutputType = {
     id: number
     name: number
-    imagem: number
+    image: number
     price: number
     ingredients: number
     _all: number
@@ -1316,7 +1316,7 @@ export namespace Prisma {
   export type ProductMinAggregateInputType = {
     id?: true
     name?: true
-    imagem?: true
+    image?: true
     price?: true
     ingredients?: true
   }
@@ -1324,7 +1324,7 @@ export namespace Prisma {
   export type ProductMaxAggregateInputType = {
     id?: true
     name?: true
-    imagem?: true
+    image?: true
     price?: true
     ingredients?: true
   }
@@ -1332,7 +1332,7 @@ export namespace Prisma {
   export type ProductCountAggregateInputType = {
     id?: true
     name?: true
-    imagem?: true
+    image?: true
     price?: true
     ingredients?: true
     _all?: true
@@ -1427,7 +1427,7 @@ export namespace Prisma {
   export type ProductGroupByOutputType = {
     id: number
     name: string
-    imagem: string
+    image: string
     price: Decimal
     ingredients: string | null
     _count: ProductCountAggregateOutputType | null
@@ -1454,7 +1454,7 @@ export namespace Prisma {
   export type ProductSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    imagem?: boolean
+    image?: boolean
     price?: boolean
     ingredients?: boolean
     orderProducts?: boolean | Product$orderProductsArgs<ExtArgs>
@@ -1464,7 +1464,7 @@ export namespace Prisma {
   export type ProductSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    imagem?: boolean
+    image?: boolean
     price?: boolean
     ingredients?: boolean
   }, ExtArgs["result"]["product"]>
@@ -1472,7 +1472,7 @@ export namespace Prisma {
   export type ProductSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
-    imagem?: boolean
+    image?: boolean
     price?: boolean
     ingredients?: boolean
   }, ExtArgs["result"]["product"]>
@@ -1480,12 +1480,12 @@ export namespace Prisma {
   export type ProductSelectScalar = {
     id?: boolean
     name?: boolean
-    imagem?: boolean
+    image?: boolean
     price?: boolean
     ingredients?: boolean
   }
 
-  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "imagem" | "price" | "ingredients", ExtArgs["result"]["product"]>
+  export type ProductOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "image" | "price" | "ingredients", ExtArgs["result"]["product"]>
   export type ProductInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     orderProducts?: boolean | Product$orderProductsArgs<ExtArgs>
     _count?: boolean | ProductCountOutputTypeDefaultArgs<ExtArgs>
@@ -1501,7 +1501,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       name: string
-      imagem: string
+      image: string
       price: Prisma.Decimal
       ingredients: string | null
     }, ExtArgs["result"]["product"]>
@@ -1930,7 +1930,7 @@ export namespace Prisma {
   interface ProductFieldRefs {
     readonly id: FieldRef<"Product", 'Int'>
     readonly name: FieldRef<"Product", 'String'>
-    readonly imagem: FieldRef<"Product", 'String'>
+    readonly image: FieldRef<"Product", 'String'>
     readonly price: FieldRef<"Product", 'Decimal'>
     readonly ingredients: FieldRef<"Product", 'String'>
   }
@@ -5709,7 +5709,7 @@ export namespace Prisma {
   export const ProductScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    imagem: 'imagem',
+    image: 'image',
     price: 'price',
     ingredients: 'ingredients'
   };
@@ -5871,7 +5871,7 @@ export namespace Prisma {
     NOT?: ProductWhereInput | ProductWhereInput[]
     id?: IntFilter<"Product"> | number
     name?: StringFilter<"Product"> | string
-    imagem?: StringFilter<"Product"> | string
+    image?: StringFilter<"Product"> | string
     price?: DecimalFilter<"Product"> | Decimal | DecimalJsLike | number | string
     ingredients?: StringNullableFilter<"Product"> | string | null
     orderProducts?: OrderProductsListRelationFilter
@@ -5880,7 +5880,7 @@ export namespace Prisma {
   export type ProductOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
-    imagem?: SortOrder
+    image?: SortOrder
     price?: SortOrder
     ingredients?: SortOrderInput | SortOrder
     orderProducts?: OrderProductsOrderByRelationAggregateInput
@@ -5892,7 +5892,7 @@ export namespace Prisma {
     OR?: ProductWhereInput[]
     NOT?: ProductWhereInput | ProductWhereInput[]
     name?: StringFilter<"Product"> | string
-    imagem?: StringFilter<"Product"> | string
+    image?: StringFilter<"Product"> | string
     price?: DecimalFilter<"Product"> | Decimal | DecimalJsLike | number | string
     ingredients?: StringNullableFilter<"Product"> | string | null
     orderProducts?: OrderProductsListRelationFilter
@@ -5901,7 +5901,7 @@ export namespace Prisma {
   export type ProductOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
-    imagem?: SortOrder
+    image?: SortOrder
     price?: SortOrder
     ingredients?: SortOrderInput | SortOrder
     _count?: ProductCountOrderByAggregateInput
@@ -5917,7 +5917,7 @@ export namespace Prisma {
     NOT?: ProductScalarWhereWithAggregatesInput | ProductScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Product"> | number
     name?: StringWithAggregatesFilter<"Product"> | string
-    imagem?: StringWithAggregatesFilter<"Product"> | string
+    image?: StringWithAggregatesFilter<"Product"> | string
     price?: DecimalWithAggregatesFilter<"Product"> | Decimal | DecimalJsLike | number | string
     ingredients?: StringNullableWithAggregatesFilter<"Product"> | string | null
   }
@@ -6096,7 +6096,7 @@ export namespace Prisma {
 
   export type ProductCreateInput = {
     name: string
-    imagem?: string
+    image?: string
     price: Decimal | DecimalJsLike | number | string
     ingredients?: string | null
     orderProducts?: OrderProductsCreateNestedManyWithoutProductInput
@@ -6105,7 +6105,7 @@ export namespace Prisma {
   export type ProductUncheckedCreateInput = {
     id?: number
     name: string
-    imagem?: string
+    image?: string
     price: Decimal | DecimalJsLike | number | string
     ingredients?: string | null
     orderProducts?: OrderProductsUncheckedCreateNestedManyWithoutProductInput
@@ -6113,7 +6113,7 @@ export namespace Prisma {
 
   export type ProductUpdateInput = {
     name?: StringFieldUpdateOperationsInput | string
-    imagem?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     ingredients?: NullableStringFieldUpdateOperationsInput | string | null
     orderProducts?: OrderProductsUpdateManyWithoutProductNestedInput
@@ -6122,7 +6122,7 @@ export namespace Prisma {
   export type ProductUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    imagem?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     ingredients?: NullableStringFieldUpdateOperationsInput | string | null
     orderProducts?: OrderProductsUncheckedUpdateManyWithoutProductNestedInput
@@ -6131,14 +6131,14 @@ export namespace Prisma {
   export type ProductCreateManyInput = {
     id?: number
     name: string
-    imagem?: string
+    image?: string
     price: Decimal | DecimalJsLike | number | string
     ingredients?: string | null
   }
 
   export type ProductUpdateManyMutationInput = {
     name?: StringFieldUpdateOperationsInput | string
-    imagem?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     ingredients?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -6146,7 +6146,7 @@ export namespace Prisma {
   export type ProductUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    imagem?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     ingredients?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -6378,7 +6378,7 @@ export namespace Prisma {
   export type ProductCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    imagem?: SortOrder
+    image?: SortOrder
     price?: SortOrder
     ingredients?: SortOrder
   }
@@ -6391,7 +6391,7 @@ export namespace Prisma {
   export type ProductMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    imagem?: SortOrder
+    image?: SortOrder
     price?: SortOrder
     ingredients?: SortOrder
   }
@@ -6399,7 +6399,7 @@ export namespace Prisma {
   export type ProductMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
-    imagem?: SortOrder
+    image?: SortOrder
     price?: SortOrder
     ingredients?: SortOrder
   }
@@ -7284,7 +7284,7 @@ export namespace Prisma {
 
   export type ProductCreateWithoutOrderProductsInput = {
     name: string
-    imagem?: string
+    image?: string
     price: Decimal | DecimalJsLike | number | string
     ingredients?: string | null
   }
@@ -7292,7 +7292,7 @@ export namespace Prisma {
   export type ProductUncheckedCreateWithoutOrderProductsInput = {
     id?: number
     name: string
-    imagem?: string
+    image?: string
     price: Decimal | DecimalJsLike | number | string
     ingredients?: string | null
   }
@@ -7343,7 +7343,7 @@ export namespace Prisma {
 
   export type ProductUpdateWithoutOrderProductsInput = {
     name?: StringFieldUpdateOperationsInput | string
-    imagem?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     ingredients?: NullableStringFieldUpdateOperationsInput | string | null
   }
@@ -7351,7 +7351,7 @@ export namespace Prisma {
   export type ProductUncheckedUpdateWithoutOrderProductsInput = {
     id?: IntFieldUpdateOperationsInput | number
     name?: StringFieldUpdateOperationsInput | string
-    imagem?: StringFieldUpdateOperationsInput | string
+    image?: StringFieldUpdateOperationsInput | string
     price?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     ingredients?: NullableStringFieldUpdateOperationsInput | string | null
   }
