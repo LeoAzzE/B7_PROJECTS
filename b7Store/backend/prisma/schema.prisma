@@ -23,6 +23,7 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
   addresses UserAddress[]
+  orders Order[]
 }
 
 model UserAddress {
@@ -61,10 +62,11 @@ model Product {
   images ProductImage[]
   metadadata ProductMetadata[]
   category Category @relation(fields: [categoryId], references: [id])
+  orders OrderProduct[]
 }
 
 model ProductImage {
-  Id Int @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   productId Int
   url String
   createdAt DateTime @default(now())
@@ -109,4 +111,36 @@ model MetadataValue {
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now()) @updatedAt
   categoryMetadata CategoryMetadata @relation(fields: [categoryMetadataId], references: [id])
+}
+
+model Order {
+  id Int @id @default(autoincrement())
+  userId Int
+  status String @default("pending")
+  total Float
+  shippingCost Float @default(0)
+  shippingDays Int @default(0)
+  shippingZipcode String?
+  shippingStreet String?
+  shippingNumber String?
+  shippingCity String?
+  shippingState String?
+  shippingCountry String?
+  shippingComplement String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  orderItems OrderProduct[]
+  user User @relation(fields: [userId], references: [id])
+}
+
+model OrderProduct {
+  id Int @id @default(autoincrement())
+  orderId Int
+  productId Int
+  quantity Int @default(1)
+  price Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  order Order @relation(fields: [orderId], references: [id])
+  product Product @relation(fields: [productId], references: [id])
 }
