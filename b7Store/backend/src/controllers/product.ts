@@ -2,6 +2,7 @@ import { RequestHandler } from "express";
 import { getProductSchema } from "../schemas/get-product-schema";
 import { getAllProducts } from "../services/product";
 import { getAbsoluteImageIrl } from "../utils/get-absolute-image-url";
+import { error } from "console";
 
 export const getProduct: RequestHandler = async (req, res) => {
   const parseResult = getProductSchema.safeParse(req.query);
@@ -27,4 +28,10 @@ export const getProduct: RequestHandler = async (req, res) => {
   }));
 
   res.json({ error: null, products: productsWithAbsoluteUrl });
+};
+
+export const getOneProduct: RequestHandler = async (req, res) => {
+  res.json({
+    error: null,
+  });
 };

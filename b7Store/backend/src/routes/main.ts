@@ -10,3 +10,4 @@ routes.get("/ping", (req, res) => {
 
 routes.get("/banners", bannerController.getBanners);
 routes.get("/products", productController.getProduct);
+routes.get("/product/:id", productController.getOneProduct);

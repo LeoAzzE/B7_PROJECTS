@@ -21,7 +21,31 @@ export const getAllProducts = async (filters: ProductFilters) => {
       break;
   }
 
-  let where = {};
+  let where: any = {};
+  if (filters.metadata && typeof filters.metadata === "object") {
+    let metafilters = [];
+    for (let categoryMetadataId in filters.metadata) {
+      const value = filters.metadata[categoryMetadataId];
+      if (typeof value !== "string") continue;
+      const valueIds = value
+        .split("|")
+        .map((v) => v.trim())
+        .filter(Boolean);
+      if (value.length === 0) continue;
+
+      metafilters.push({
+        metadata: {
+          some: {
+            categoryMetadataId,
+            metadataValueId: { in: valueIds },
+          },
+        },
+      });
+    }
+    if (metafilters.length > 0) {
+      where.AND = metafilters;
+    }
+  }
 
   const products = await prisma.product.findMany({
     select: {
